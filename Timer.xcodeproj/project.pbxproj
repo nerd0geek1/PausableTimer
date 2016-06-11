@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		733BD00D1D0C73A500535D16 /* TimerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BD00C1D0C73A500535D16 /* TimerType.swift */; };
 		73AE805E1D0C5828005F1269 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AE80531D0C5828005F1269 /* Timer.framework */; };
 		73AE80631D0C5828005F1269 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AE80621D0C5828005F1269 /* TimerTests.swift */; };
 /* End PBXBuildFile section */
@@ -22,6 +23,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		733BD00C1D0C73A500535D16 /* TimerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerType.swift; sourceTree = "<group>"; };
 		73AE80531D0C5828005F1269 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AE80581D0C5828005F1269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73AE805D1D0C5828005F1269 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +50,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		733BD00A1D0C73A500535D16 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				733BD00B1D0C73A500535D16 /* classes */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		733BD00B1D0C73A500535D16 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				733BD00C1D0C73A500535D16 /* TimerType.swift */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
 		73AE80491D0C5828005F1269 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +87,7 @@
 		73AE80551D0C5828005F1269 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				733BD00A1D0C73A500535D16 /* Timer */,
 				73AE80581D0C5828005F1269 /* Info.plist */,
 			);
 			path = Timer;
@@ -208,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				733BD00D1D0C73A500535D16 /* TimerType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +344,7 @@
 		73AE80681D0C5828005F1269 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -334,12 +355,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.Timer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		73AE80691D0C5828005F1269 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
