@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73AE80571D0C5828005F1269 /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 73AE80561D0C5828005F1269 /* Timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73AE805E1D0C5828005F1269 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AE80531D0C5828005F1269 /* Timer.framework */; };
 		73AE80631D0C5828005F1269 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AE80621D0C5828005F1269 /* TimerTests.swift */; };
 /* End PBXBuildFile section */
@@ -24,7 +23,6 @@
 
 /* Begin PBXFileReference section */
 		73AE80531D0C5828005F1269 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		73AE80561D0C5828005F1269 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		73AE80581D0C5828005F1269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73AE805D1D0C5828005F1269 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AE80621D0C5828005F1269 /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 		73AE80551D0C5828005F1269 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				73AE80561D0C5828005F1269 /* Timer.h */,
 				73AE80581D0C5828005F1269 /* Info.plist */,
 			);
 			path = Timer;
@@ -93,7 +90,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73AE80571D0C5828005F1269 /* Timer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
