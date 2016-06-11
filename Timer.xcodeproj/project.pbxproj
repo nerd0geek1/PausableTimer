@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		733BD00D1D0C73A500535D16 /* TimerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BD00C1D0C73A500535D16 /* TimerType.swift */; };
 		73AE805E1D0C5828005F1269 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AE80531D0C5828005F1269 /* Timer.framework */; };
-		73AE80631D0C5828005F1269 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AE80621D0C5828005F1269 /* TimerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +26,6 @@
 		73AE80531D0C5828005F1269 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AE80581D0C5828005F1269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73AE805D1D0C5828005F1269 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		73AE80621D0C5828005F1269 /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		73AE80641D0C5828005F1269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +94,6 @@
 		73AE80611D0C5828005F1269 /* TimerTests */ = {
 			isa = PBXGroup;
 			children = (
-				73AE80621D0C5828005F1269 /* TimerTests.swift */,
 				73AE80641D0C5828005F1269 /* Info.plist */,
 			);
 			path = TimerTests;
@@ -235,7 +232,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73AE80631D0C5828005F1269 /* TimerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
