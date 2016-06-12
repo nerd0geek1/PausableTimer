@@ -10,6 +10,10 @@
 		733BD00D1D0C73A500535D16 /* TimerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BD00C1D0C73A500535D16 /* TimerType.swift */; };
 		733BD0101D0C750400535D16 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733BD00E1D0C750400535D16 /* Nimble.framework */; };
 		733BD0111D0C750400535D16 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733BD00F1D0C750400535D16 /* Quick.framework */; };
+		733BD0141D0C7C8600535D16 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BD0131D0C7C8600535D16 /* Timer.swift */; };
+		733BD0161D0D1DA300535D16 /* TimerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BD0151D0D1DA300535D16 /* TimerSpec.swift */; };
+		737ADA9C1D0D2CF80088DA02 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733BD00E1D0C750400535D16 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		737ADA9D1D0D2CF80088DA02 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733BD00F1D0C750400535D16 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73AE805E1D0C5828005F1269 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AE80531D0C5828005F1269 /* Timer.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,10 +27,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		737ADA9B1D0D2CEF0088DA02 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				737ADA9C1D0D2CF80088DA02 /* Nimble.framework in CopyFiles */,
+				737ADA9D1D0D2CF80088DA02 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		733BD00C1D0C73A500535D16 /* TimerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerType.swift; sourceTree = "<group>"; };
 		733BD00E1D0C750400535D16 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		733BD00F1D0C750400535D16 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		733BD0131D0C7C8600535D16 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		733BD0151D0D1DA300535D16 /* TimerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerSpec.swift; sourceTree = "<group>"; };
 		73AE80531D0C5828005F1269 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AE80581D0C5828005F1269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73AE805D1D0C5828005F1269 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				733BD00C1D0C73A500535D16 /* TimerType.swift */,
+				733BD0131D0C7C8600535D16 /* Timer.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -110,6 +131,7 @@
 		73AE80611D0C5828005F1269 /* TimerTests */ = {
 			isa = PBXGroup;
 			children = (
+				733BD0151D0D1DA300535D16 /* TimerSpec.swift */,
 				73AE80641D0C5828005F1269 /* Info.plist */,
 			);
 			path = TimerTests;
@@ -154,6 +176,7 @@
 				73AE80591D0C5828005F1269 /* Sources */,
 				73AE805A1D0C5828005F1269 /* Frameworks */,
 				73AE805B1D0C5828005F1269 /* Resources */,
+				737ADA9B1D0D2CEF0088DA02 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -241,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				733BD00D1D0C73A500535D16 /* TimerType.swift in Sources */,
+				733BD0141D0C7C8600535D16 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				733BD0161D0D1DA300535D16 /* TimerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +416,7 @@
 		73AE806B1D0C5828005F1269 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -399,12 +425,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.TimerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		73AE806C1D0C5828005F1269 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
