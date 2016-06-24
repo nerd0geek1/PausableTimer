@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		733BD00D1D0C73A500535D16 /* TimerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BD00C1D0C73A500535D16 /* TimerType.swift */; };
+		270023271D1D3CAC0001D59D /* PausableTimerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270023261D1D3CAC0001D59D /* PausableTimerSpec.swift */; };
+		2700232C1D1D3CEA0001D59D /* PausableTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700232A1D1D3CEA0001D59D /* PausableTimer.swift */; };
+		2700232D1D1D3CEA0001D59D /* PausableTimerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700232B1D1D3CEA0001D59D /* PausableTimerType.swift */; };
 		733BD0101D0C750400535D16 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733BD00E1D0C750400535D16 /* Nimble.framework */; };
 		733BD0111D0C750400535D16 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733BD00F1D0C750400535D16 /* Quick.framework */; };
-		733BD0141D0C7C8600535D16 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BD0131D0C7C8600535D16 /* Timer.swift */; };
-		733BD0161D0D1DA300535D16 /* TimerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BD0151D0D1DA300535D16 /* TimerSpec.swift */; };
 		737ADA9C1D0D2CF80088DA02 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733BD00E1D0C750400535D16 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		737ADA9D1D0D2CF80088DA02 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733BD00F1D0C750400535D16 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		73AE805E1D0C5828005F1269 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AE80531D0C5828005F1269 /* Timer.framework */; };
+		73AE805E1D0C5828005F1269 /* PausableTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AE80531D0C5828005F1269 /* PausableTimer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,15 +42,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		733BD00C1D0C73A500535D16 /* TimerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerType.swift; sourceTree = "<group>"; };
+		270023191D1D3C760001D59D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2700231F1D1D3C760001D59D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		270023261D1D3CAC0001D59D /* PausableTimerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PausableTimerSpec.swift; sourceTree = "<group>"; };
+		2700232A1D1D3CEA0001D59D /* PausableTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PausableTimer.swift; sourceTree = "<group>"; };
+		2700232B1D1D3CEA0001D59D /* PausableTimerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PausableTimerType.swift; sourceTree = "<group>"; };
 		733BD00E1D0C750400535D16 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		733BD00F1D0C750400535D16 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		733BD0131D0C7C8600535D16 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		733BD0151D0D1DA300535D16 /* TimerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerSpec.swift; sourceTree = "<group>"; };
-		73AE80531D0C5828005F1269 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		73AE80581D0C5828005F1269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73AE805D1D0C5828005F1269 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		73AE80641D0C5828005F1269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73AE80531D0C5828005F1269 /* PausableTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PausableTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73AE805D1D0C5828005F1269 /* PausableTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PausableTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,26 +67,44 @@
 			files = (
 				733BD0101D0C750400535D16 /* Nimble.framework in Frameworks */,
 				733BD0111D0C750400535D16 /* Quick.framework in Frameworks */,
-				73AE805E1D0C5828005F1269 /* Timer.framework in Frameworks */,
+				73AE805E1D0C5828005F1269 /* PausableTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		733BD00A1D0C73A500535D16 /* Timer */ = {
+		270023181D1D3C760001D59D /* PausableTimer */ = {
 			isa = PBXGroup;
 			children = (
-				733BD00B1D0C73A500535D16 /* classes */,
+				270023281D1D3CEA0001D59D /* PausableTimer */,
+				270023191D1D3C760001D59D /* Info.plist */,
 			);
-			path = Timer;
+			path = PausableTimer;
 			sourceTree = "<group>";
 		};
-		733BD00B1D0C73A500535D16 /* classes */ = {
+		2700231E1D1D3C760001D59D /* PausableTimerTests */ = {
 			isa = PBXGroup;
 			children = (
-				733BD00C1D0C73A500535D16 /* TimerType.swift */,
-				733BD0131D0C7C8600535D16 /* Timer.swift */,
+				270023261D1D3CAC0001D59D /* PausableTimerSpec.swift */,
+				2700231F1D1D3C760001D59D /* Info.plist */,
+			);
+			path = PausableTimerTests;
+			sourceTree = "<group>";
+		};
+		270023281D1D3CEA0001D59D /* PausableTimer */ = {
+			isa = PBXGroup;
+			children = (
+				270023291D1D3CEA0001D59D /* classes */,
+			);
+			path = PausableTimer;
+			sourceTree = "<group>";
+		};
+		270023291D1D3CEA0001D59D /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				2700232B1D1D3CEA0001D59D /* PausableTimerType.swift */,
+				2700232A1D1D3CEA0001D59D /* PausableTimer.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -103,8 +121,8 @@
 		73AE80491D0C5828005F1269 = {
 			isa = PBXGroup;
 			children = (
-				73AE80551D0C5828005F1269 /* Timer */,
-				73AE80611D0C5828005F1269 /* TimerTests */,
+				270023181D1D3C760001D59D /* PausableTimer */,
+				2700231E1D1D3C760001D59D /* PausableTimerTests */,
 				733BD0121D0C7A9800535D16 /* Frameworks */,
 				73AE80541D0C5828005F1269 /* Products */,
 			);
@@ -113,28 +131,10 @@
 		73AE80541D0C5828005F1269 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73AE80531D0C5828005F1269 /* Timer.framework */,
-				73AE805D1D0C5828005F1269 /* TimerTests.xctest */,
+				73AE80531D0C5828005F1269 /* PausableTimer.framework */,
+				73AE805D1D0C5828005F1269 /* PausableTimerTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		73AE80551D0C5828005F1269 /* Timer */ = {
-			isa = PBXGroup;
-			children = (
-				733BD00A1D0C73A500535D16 /* Timer */,
-				73AE80581D0C5828005F1269 /* Info.plist */,
-			);
-			path = Timer;
-			sourceTree = "<group>";
-		};
-		73AE80611D0C5828005F1269 /* TimerTests */ = {
-			isa = PBXGroup;
-			children = (
-				733BD0151D0D1DA300535D16 /* TimerSpec.swift */,
-				73AE80641D0C5828005F1269 /* Info.plist */,
-			);
-			path = TimerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +150,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		73AE80521D0C5828005F1269 /* Timer */ = {
+		73AE80521D0C5828005F1269 /* PausableTimer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73AE80671D0C5828005F1269 /* Build configuration list for PBXNativeTarget "Timer" */;
+			buildConfigurationList = 73AE80671D0C5828005F1269 /* Build configuration list for PBXNativeTarget "PausableTimer" */;
 			buildPhases = (
 				73AE804E1D0C5828005F1269 /* Sources */,
 				73AE804F1D0C5828005F1269 /* Frameworks */,
@@ -164,14 +164,14 @@
 			);
 			dependencies = (
 			);
-			name = Timer;
+			name = PausableTimer;
 			productName = Timer;
-			productReference = 73AE80531D0C5828005F1269 /* Timer.framework */;
+			productReference = 73AE80531D0C5828005F1269 /* PausableTimer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		73AE805C1D0C5828005F1269 /* TimerTests */ = {
+		73AE805C1D0C5828005F1269 /* PausableTimerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73AE806A1D0C5828005F1269 /* Build configuration list for PBXNativeTarget "TimerTests" */;
+			buildConfigurationList = 73AE806A1D0C5828005F1269 /* Build configuration list for PBXNativeTarget "PausableTimerTests" */;
 			buildPhases = (
 				73AE80591D0C5828005F1269 /* Sources */,
 				73AE805A1D0C5828005F1269 /* Frameworks */,
@@ -183,9 +183,9 @@
 			dependencies = (
 				73AE80601D0C5828005F1269 /* PBXTargetDependency */,
 			);
-			name = TimerTests;
+			name = PausableTimerTests;
 			productName = TimerTests;
-			productReference = 73AE805D1D0C5828005F1269 /* TimerTests.xctest */;
+			productReference = 73AE805D1D0C5828005F1269 /* PausableTimerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +206,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 73AE804D1D0C5828005F1269 /* Build configuration list for PBXProject "Timer" */;
+			buildConfigurationList = 73AE804D1D0C5828005F1269 /* Build configuration list for PBXProject "PausableTimer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -218,8 +218,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				73AE80521D0C5828005F1269 /* Timer */,
-				73AE805C1D0C5828005F1269 /* TimerTests */,
+				73AE80521D0C5828005F1269 /* PausableTimer */,
+				73AE805C1D0C5828005F1269 /* PausableTimerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -263,8 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				733BD00D1D0C73A500535D16 /* TimerType.swift in Sources */,
-				733BD0141D0C7C8600535D16 /* Timer.swift in Sources */,
+				2700232D1D1D3CEA0001D59D /* PausableTimerType.swift in Sources */,
+				2700232C1D1D3CEA0001D59D /* PausableTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				733BD0161D0D1DA300535D16 /* TimerSpec.swift in Sources */,
+				270023271D1D3CAC0001D59D /* PausableTimerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +281,7 @@
 /* Begin PBXTargetDependency section */
 		73AE80601D0C5828005F1269 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 73AE80521D0C5828005F1269 /* Timer */;
+			target = 73AE80521D0C5828005F1269 /* PausableTimer */;
 			targetProxy = 73AE805F1D0C5828005F1269 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -386,10 +386,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Timer/Info.plist;
+				INFOPLIST_FILE = PausableTimer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.Timer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.PausableTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -404,10 +404,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Timer/Info.plist;
+				INFOPLIST_FILE = PausableTimer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.Timer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.PausableTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -421,9 +421,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = TimerTests/Info.plist;
+				INFOPLIST_FILE = PausableTimerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.TimerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.PausableTimerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -437,9 +437,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = TimerTests/Info.plist;
+				INFOPLIST_FILE = PausableTimerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.TimerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.PausableTimerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -447,7 +447,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		73AE804D1D0C5828005F1269 /* Build configuration list for PBXProject "Timer" */ = {
+		73AE804D1D0C5828005F1269 /* Build configuration list for PBXProject "PausableTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73AE80651D0C5828005F1269 /* Debug */,
@@ -456,7 +456,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73AE80671D0C5828005F1269 /* Build configuration list for PBXNativeTarget "Timer" */ = {
+		73AE80671D0C5828005F1269 /* Build configuration list for PBXNativeTarget "PausableTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73AE80681D0C5828005F1269 /* Debug */,
@@ -465,7 +465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73AE806A1D0C5828005F1269 /* Build configuration list for PBXNativeTarget "TimerTests" */ = {
+		73AE806A1D0C5828005F1269 /* Build configuration list for PBXNativeTarget "PausableTimerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73AE806B1D0C5828005F1269 /* Debug */,

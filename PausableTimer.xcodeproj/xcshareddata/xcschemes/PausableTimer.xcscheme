@@ -15,9 +15,23 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "73AE80521D0C5828005F1269"
-               BuildableName = "Timer.framework"
-               BlueprintName = "Timer"
-               ReferencedContainer = "container:Timer.xcodeproj">
+               BuildableName = "PausableTimer.framework"
+               BlueprintName = "PausableTimer"
+               ReferencedContainer = "container:PausableTimer.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "73AE805C1D0C5828005F1269"
+               BuildableName = "PausableTimerTests.xctest"
+               BlueprintName = "PausableTimerTests"
+               ReferencedContainer = "container:PausableTimer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "73AE805C1D0C5828005F1269"
-               BuildableName = "TimerTests.xctest"
-               BlueprintName = "TimerTests"
-               ReferencedContainer = "container:Timer.xcodeproj">
+               BuildableName = "PausableTimerTests.xctest"
+               BlueprintName = "PausableTimerTests"
+               ReferencedContainer = "container:PausableTimer.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "73AE80521D0C5828005F1269"
-            BuildableName = "Timer.framework"
-            BlueprintName = "Timer"
-            ReferencedContainer = "container:Timer.xcodeproj">
+            BuildableName = "PausableTimer.framework"
+            BlueprintName = "PausableTimer"
+            ReferencedContainer = "container:PausableTimer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +79,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "73AE80521D0C5828005F1269"
-            BuildableName = "Timer.framework"
-            BlueprintName = "Timer"
-            ReferencedContainer = "container:Timer.xcodeproj">
+            BuildableName = "PausableTimer.framework"
+            BlueprintName = "PausableTimer"
+            ReferencedContainer = "container:PausableTimer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,9 +97,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "73AE80521D0C5828005F1269"
-            BuildableName = "Timer.framework"
-            BlueprintName = "Timer"
-            ReferencedContainer = "container:Timer.xcodeproj">
+            BuildableName = "PausableTimer.framework"
+            BlueprintName = "PausableTimer"
+            ReferencedContainer = "container:PausableTimer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

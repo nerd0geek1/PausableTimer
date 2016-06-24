@@ -1,6 +1,6 @@
 //
-//  Timer.swift
-//  Timer
+//  PausableTimer.swift
+//  PausableTimer
 //
 //  Created by Kohei Tabata on 6/12/16.
 //  Copyright © 2016 Kohei Tabata. All rights reserved.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class Timer: TimerType {
+public class PausableTimer: PausableTimerType {
 
-    public static let sharedInstance: Timer = Timer()
+    public static let sharedInstance: PausableTimer = PausableTimer()
 
     //MARK: - callback closures
 
