@@ -12,6 +12,8 @@
 		2700232D1D1D3CEA0001D59D /* PausableTimerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700232B1D1D3CEA0001D59D /* PausableTimerType.swift */; };
 		733BD0101D0C750400535D16 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733BD00E1D0C750400535D16 /* Nimble.framework */; };
 		733BD0111D0C750400535D16 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733BD00F1D0C750400535D16 /* Quick.framework */; };
+		7364CA0D1D1E329C00B08236 /* TimerDurationConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364CA0C1D1E329C00B08236 /* TimerDurationConverter.swift */; };
+		7364CA0F1D1E343600B08236 /* TimerDurationConverterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364CA0E1D1E343600B08236 /* TimerDurationConverterSpec.swift */; };
 		737ADA9C1D0D2CF80088DA02 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733BD00E1D0C750400535D16 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		737ADA9D1D0D2CF80088DA02 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733BD00F1D0C750400535D16 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73AE805E1D0C5828005F1269 /* PausableTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AE80531D0C5828005F1269 /* PausableTimer.framework */; };
@@ -49,6 +51,8 @@
 		2700232B1D1D3CEA0001D59D /* PausableTimerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PausableTimerType.swift; sourceTree = "<group>"; };
 		733BD00E1D0C750400535D16 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		733BD00F1D0C750400535D16 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		7364CA0C1D1E329C00B08236 /* TimerDurationConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerDurationConverter.swift; sourceTree = "<group>"; };
+		7364CA0E1D1E343600B08236 /* TimerDurationConverterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerDurationConverterSpec.swift; sourceTree = "<group>"; };
 		73AE80531D0C5828005F1269 /* PausableTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PausableTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AE805D1D0C5828005F1269 /* PausableTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PausableTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				270023261D1D3CAC0001D59D /* PausableTimerSpec.swift */,
+				7364CA0E1D1E343600B08236 /* TimerDurationConverterSpec.swift */,
 				2700231F1D1D3C760001D59D /* Info.plist */,
 			);
 			path = PausableTimerTests;
@@ -105,6 +110,7 @@
 			children = (
 				2700232B1D1D3CEA0001D59D /* PausableTimerType.swift */,
 				2700232A1D1D3CEA0001D59D /* PausableTimer.swift */,
+				7364CA0C1D1E329C00B08236 /* TimerDurationConverter.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -263,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7364CA0D1D1E329C00B08236 /* TimerDurationConverter.swift in Sources */,
 				2700232D1D1D3CEA0001D59D /* PausableTimerType.swift in Sources */,
 				2700232C1D1D3CEA0001D59D /* PausableTimer.swift in Sources */,
 			);
@@ -272,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7364CA0F1D1E343600B08236 /* TimerDurationConverterSpec.swift in Sources */,
 				270023271D1D3CAC0001D59D /* PausableTimerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

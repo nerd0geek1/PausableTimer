@@ -106,21 +106,6 @@ public class PausableTimer: PausableTimerType {
         return remainingDuration < 0 ? 0 : remainingDuration
     }
 
-    public func formattedRemainingDuration(now: NSDate = NSDate()) -> String {
-        let secondsPerHour: Int   = 3600
-        let secondsPerMinute: Int = 60
-
-        let remainingDuration: Int = Int(self.remainingDuration(now))
-        let hours: Int   = remainingDuration / secondsPerHour
-        let minutes: Int = (remainingDuration % secondsPerHour) / secondsPerMinute
-        let seconds: Int = remainingDuration % secondsPerMinute
-
-        let hoursString: String   = hours == 0 ? "" : String(format: "%02d:", hours)
-        let defaultString: String = String(format: "%02d:%02d", minutes, seconds)
-
-        return hoursString + defaultString
-    }
-
     //MARK: - private
 
     private func registerTimer() {

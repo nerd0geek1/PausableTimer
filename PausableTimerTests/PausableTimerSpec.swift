@@ -202,32 +202,6 @@ class PausableTimerSpec: QuickSpec {
             })
 
 
-            describe("formattedRemainingDuration(now: NSDate)", {
-                context("with duration which exceeds one hour", {
-                    it("will return string like format 00:00:00", closure: {
-                        let timer: PausableTimer = PausableTimer()
-
-                        let duration: NSTimeInterval = 3820
-
-                        timer.setDuration(duration)
-
-                        expect(timer.formattedRemainingDuration()).to(equal("01:03:40"))
-                    })
-                })
-                context("with duration which does not exceeds one hour", {
-                    it("will return string like format 00:00", closure: {
-                        let timer: PausableTimer = PausableTimer()
-
-                        let duration: NSTimeInterval = 1815
-
-                        timer.setDuration(duration)
-
-                        expect(timer.formattedRemainingDuration()).to(equal("30:15"))
-                    })
-                })
-            })
-
-
             describe("didStart", {
                 it("will be invoked when start() is called", closure: {
                     let timer: PausableTimer = PausableTimer()

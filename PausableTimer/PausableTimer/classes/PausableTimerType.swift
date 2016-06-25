@@ -24,5 +24,4 @@ public protocol PausableTimerType {
     func isRunning(now: NSDate) -> Bool
 
     func remainingDuration(now: NSDate) -> NSTimeInterval
-    func formattedRemainingDuration(now: NSDate) -> String
 }
