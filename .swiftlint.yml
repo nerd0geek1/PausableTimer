@@ -1,4 +1,4 @@
 excluded:
-  - TimerTests
+  - PausableTimerTests
   - Carthage
 line_length: 150
