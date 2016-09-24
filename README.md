@@ -54,9 +54,10 @@ print(TimerDurationConverter.durationString(3690)) //01:01:30
 ```
 ## Requirements
 - iOS 9.0+
-- Xcode 7.3 or above
+- Xcode 8.0 or above
 
-PausableTimer is now supporting Swift2.2.
+PausableTimer is now supporting Swift3.
+If you want to use with Swift2.2, use Swift2.2 branch.
 
 ## Installation
 PausableTimer supports only iOS and Carthage.
