@@ -13,17 +13,17 @@ import Nimble
 
 class TimerDurationConverterSpec: QuickSpec {
     override func spec() {
-        describe("durationString(duration: NSTimeInterval)", {
+        describe("durationString(duration: TimeInterval)", {
             context("with duration which exceeds one hour", {
                 it("will return string like format 00:00:00", closure: {
-                    let duration: NSTimeInterval = 3820
+                    let duration: TimeInterval = 3820
 
                     expect(TimerDurationConverter.durationString(duration)).to(equal("01:03:40"))
                 })
             })
             context("with duration which does not exceeds one hour", {
                 it("will return string like format 00:00", closure: {
-                    let duration: NSTimeInterval = 1815
+                    let duration: TimeInterval = 1815
                     
                     expect(TimerDurationConverter.durationString(duration)).to(equal("30:15"))
                 })

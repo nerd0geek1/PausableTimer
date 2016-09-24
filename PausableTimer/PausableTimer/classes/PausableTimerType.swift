@@ -12,16 +12,16 @@ public protocol PausableTimerType {
     var didStart: (() -> Void)? { get set }
     var didPause: (() -> Void)? { get set }
     var didResume: (() -> Void)? { get set }
-    var didStop: ((isFinished: Bool) -> Void)? { get set }
+    var didStop: ((_ isFinished: Bool) -> Void)? { get set }
 
-    func setDuration(duration: NSTimeInterval)
+    func setDuration(_ duration: TimeInterval)
 
-    func start(startDate: NSDate)
-    func pause(pauseDate: NSDate)
-    func resume(resumeDate: NSDate)
+    func start(_ startDate: Date)
+    func pause(_ pauseDate: Date)
+    func resume(_ resumeDate: Date)
     func stop()
 
-    func isRunning(now: NSDate) -> Bool
+    func isRunning(_ now: Date) -> Bool
 
-    func remainingDuration(now: NSDate) -> NSTimeInterval
+    func remainingDuration(_ now: Date) -> TimeInterval
 }

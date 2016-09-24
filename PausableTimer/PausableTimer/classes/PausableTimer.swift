@@ -8,43 +8,43 @@
 
 import Foundation
 
-public class PausableTimer: PausableTimerType {
+open class PausableTimer: PausableTimerType {
 
-    public static let sharedInstance: PausableTimer = PausableTimer()
+    open static let sharedInstance: PausableTimer = PausableTimer()
 
     //MARK: - callback closures
 
-    public var didStart: (() -> Void)?
-    public var didPause: (() -> Void)?
-    public var didResume: (() -> Void)?
-    public var didStop: ((isFinished: Bool) -> Void)?
+    open var didStart: (() -> Void)?
+    open var didPause: (() -> Void)?
+    open var didResume: (() -> Void)?
+    open var didStop: ((_ isFinished: Bool) -> Void)?
 
     //MARK: - duration, and related variables
 
-    private var timer: NSTimer?
+    private var timer: Timer?
 
-    private var startDate: NSDate?
+    private var startDate: Date?
 
-    private var duration: NSTimeInterval        = 0
-    private var currentDuration: NSTimeInterval = 0
+    private var duration: TimeInterval        = 0
+    private var currentDuration: TimeInterval = 0
 
     //MARK: - setup
 
-    public func setDuration(duration: NSTimeInterval) {
+    open func setDuration(_ duration: TimeInterval) {
         self.duration        = duration
         self.currentDuration = duration
     }
 
     //MARK: - operate
 
-    public func start(startDate: NSDate = NSDate()) {
+    open func start(_ startDate: Date = Date()) {
         registerTimer()
 
         self.startDate = startDate
         didStart?()
     }
 
-    public func pause(pauseDate: NSDate = NSDate()) {
+    open func pause(_ pauseDate: Date = Date()) {
         if !isRunning(pauseDate) {
             return
         }
@@ -56,7 +56,7 @@ public class PausableTimer: PausableTimerType {
         didPause?()
     }
 
-    public func resume(resumeDate: NSDate = NSDate()) {
+    open func resume(_ resumeDate: Date = Date()) {
         if isRunning(resumeDate) {
             return
         }
@@ -70,10 +70,10 @@ public class PausableTimer: PausableTimerType {
         didResume?()
     }
 
-    public func stop() {
+    open func stop() {
         reset()
 
-        didStop?(isFinished: false)
+        didStop?(false)
     }
 
     //MARK: - NSTimer
@@ -82,12 +82,12 @@ public class PausableTimer: PausableTimerType {
     private func didFinishTimerDuration() {
         reset()
 
-        didStop?(isFinished: true)
+        didStop?(true)
     }
 
     //MARK: -
 
-    public func isRunning(now: NSDate = NSDate()) -> Bool {
+    open func isRunning(_ now: Date = Date()) -> Bool {
         if startDate == nil {
             return false
         }
@@ -95,13 +95,13 @@ public class PausableTimer: PausableTimerType {
         return remainingDuration(now) > 0
     }
 
-    public func remainingDuration(now: NSDate = NSDate()) -> NSTimeInterval {
-        guard let startDate: NSDate = startDate else {
+    open func remainingDuration(_ now: Date = Date()) -> TimeInterval {
+        guard let startDate: Date = startDate else {
             return currentDuration
         }
 
-        let elapsedDuration: NSTimeInterval   = now.timeIntervalSinceDate(startDate)
-        let remainingDuration: NSTimeInterval = currentDuration - elapsedDuration
+        let elapsedDuration: TimeInterval   = now.timeIntervalSince(startDate)
+        let remainingDuration: TimeInterval = currentDuration - elapsedDuration
 
         return remainingDuration < 0 ? 0 : remainingDuration
     }
@@ -109,7 +109,7 @@ public class PausableTimer: PausableTimerType {
     //MARK: - private
 
     private func registerTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(currentDuration,
+        timer = Timer.scheduledTimer(timeInterval: currentDuration,
                                                        target: self,
                                                        selector: #selector(didFinishTimerDuration),
                                                        userInfo: nil,

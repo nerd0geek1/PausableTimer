@@ -14,13 +14,13 @@ import Nimble
 class PausableTimerSpec: QuickSpec {
     override func spec() {
         describe("PausableTimer") {
-            describe("setDuration(duration: NSTimeInterval)", {
+            describe("setDuration(duration: TimeInterval)", {
                 it("will update duration with passed value", closure: {
                     let timer: PausableTimer = PausableTimer()
 
                     expect(timer.remainingDuration()).to(equal(0))
 
-                    let duration: NSTimeInterval = 300
+                    let duration: TimeInterval = 300
                     timer.setDuration(duration)
 
                     expect(timer.remainingDuration()).to(equal(duration))
@@ -34,10 +34,10 @@ class PausableTimerSpec: QuickSpec {
                         it("will return true", closure: {
                             let timer: PausableTimer = PausableTimer()
 
-                            let duration: NSTimeInterval = 10
-                            let diff: NSTimeInterval     = 5
-                            let startDate: NSDate        = NSDate()
-                            let now: NSDate              = startDate.dateByAddingTimeInterval(diff)
+                            let duration: TimeInterval = 10
+                            let diff: TimeInterval     = 5
+                            let startDate: Date        = Date()
+                            let now: Date              = startDate.addingTimeInterval(diff)
 
                             timer.setDuration(duration)
                             timer.start(startDate)
@@ -49,10 +49,10 @@ class PausableTimerSpec: QuickSpec {
                         it("will return false", closure: {
                             let timer: PausableTimer = PausableTimer()
 
-                            let duration: NSTimeInterval = 5
-                            let diff: NSTimeInterval     = 6
-                            let startDate: NSDate        = NSDate()
-                            let now: NSDate              = startDate.dateByAddingTimeInterval(diff)
+                            let duration: TimeInterval = 5
+                            let diff: TimeInterval     = 6
+                            let startDate: Date        = Date()
+                            let now: Date              = startDate.addingTimeInterval(diff)
 
                             timer.setDuration(duration)
                             timer.start(startDate)
@@ -64,11 +64,11 @@ class PausableTimerSpec: QuickSpec {
                         it("will return false", closure: {
                             let timer: PausableTimer = PausableTimer()
 
-                            let duration: NSTimeInterval = 10
+                            let duration: TimeInterval = 10
 
-                            let startDate: NSDate = NSDate()
-                            let pauseDate: NSDate = startDate.dateByAddingTimeInterval(5)
-                            let now: NSDate       = startDate.dateByAddingTimeInterval(6)
+                            let startDate: Date = Date()
+                            let pauseDate: Date = startDate.addingTimeInterval(5)
+                            let now: Date       = startDate.addingTimeInterval(6)
 
                             timer.setDuration(duration)
                             timer.start(startDate)
@@ -82,13 +82,13 @@ class PausableTimerSpec: QuickSpec {
                         it("will return true", closure: {
                             let timer: PausableTimer = PausableTimer()
 
-                            let duration: NSTimeInterval = 10
+                            let duration: TimeInterval = 10
 
-                            let startDate: NSDate  = NSDate()
-                            let pauseDate: NSDate  = startDate.dateByAddingTimeInterval(5)
+                            let startDate: Date  = Date()
+                            let pauseDate: Date  = startDate.addingTimeInterval(5)
 
-                            let resumeDate: NSDate = startDate.dateByAddingTimeInterval(6)
-                            let now: NSDate        = resumeDate.dateByAddingTimeInterval(2)
+                            let resumeDate: Date = startDate.addingTimeInterval(6)
+                            let now: Date        = resumeDate.addingTimeInterval(2)
 
 
                             timer.setDuration(duration)
@@ -114,15 +114,15 @@ class PausableTimerSpec: QuickSpec {
             })
 
 
-            describe("remainingDuration(now: NSDate)", {
+            describe("remainingDuration(now: Date)", {
                 context("with startDate", {
                     context("and now argument which diff between startDate exceeds duration", {
                         it("will return 0", closure: {
                             let timer: PausableTimer = PausableTimer()
 
-                            let duration: NSTimeInterval = 10
-                            let startDate: NSDate        = NSDate()
-                            let now: NSDate              = startDate.dateByAddingTimeInterval(15)
+                            let duration: TimeInterval = 10
+                            let startDate: Date        = Date()
+                            let now: Date              = startDate.addingTimeInterval(15)
 
                             timer.setDuration(duration)
 
@@ -135,10 +135,10 @@ class PausableTimerSpec: QuickSpec {
                         it("will return (duration - (diff between startDate and now argument))", closure: {
                             let timer: PausableTimer = PausableTimer()
 
-                            let duration: NSTimeInterval = 10
-                            let diff: NSTimeInterval     = 4
-                            let startDate: NSDate        = NSDate()
-                            let now: NSDate              = startDate.dateByAddingTimeInterval(diff)
+                            let duration: TimeInterval = 10
+                            let diff: TimeInterval     = 4
+                            let startDate: Date        = Date()
+                            let now: Date              = startDate.addingTimeInterval(diff)
 
                             timer.setDuration(duration)
 
@@ -151,11 +151,11 @@ class PausableTimerSpec: QuickSpec {
                         it("will return (duration - (diff between startDate and pauseDate argument))", closure: {
                             let timer: PausableTimer = PausableTimer()
 
-                            let duration: NSTimeInterval = 10
-                            let diff: NSTimeInterval     = 4
-                            let startDate: NSDate = NSDate()
-                            let pauseDate: NSDate = startDate.dateByAddingTimeInterval(diff)
-                            let now: NSDate       = startDate.dateByAddingTimeInterval(9)
+                            let duration: TimeInterval = 10
+                            let diff: TimeInterval     = 4
+                            let startDate: Date = Date()
+                            let pauseDate: Date = startDate.addingTimeInterval(diff)
+                            let now: Date       = startDate.addingTimeInterval(9)
 
                             timer.setDuration(duration)
 
@@ -169,14 +169,14 @@ class PausableTimerSpec: QuickSpec {
                         it("will return (duration - (diff between startDate and pauseDate) - (diff between resumeDate and now argument))", closure: {
                             let timer: PausableTimer = PausableTimer()
 
-                            let duration: NSTimeInterval          = 10
-                            let diffForPauseDate: NSTimeInterval  = 4
-                            let diffForResumeDate: NSTimeInterval = 6
-                            let diffForNow: NSTimeInterval        = 2
-                            let startDate: NSDate  = NSDate()
-                            let pauseDate: NSDate  = startDate.dateByAddingTimeInterval(diffForPauseDate)
-                            let resumeDate: NSDate = startDate.dateByAddingTimeInterval(diffForResumeDate)
-                            let now: NSDate        = resumeDate.dateByAddingTimeInterval(diffForNow)
+                            let duration: TimeInterval          = 10
+                            let diffForPauseDate: TimeInterval  = 4
+                            let diffForResumeDate: TimeInterval = 6
+                            let diffForNow: TimeInterval        = 2
+                            let startDate: Date  = Date()
+                            let pauseDate: Date  = startDate.addingTimeInterval(diffForPauseDate)
+                            let resumeDate: Date = startDate.addingTimeInterval(diffForResumeDate)
+                            let now: Date        = resumeDate.addingTimeInterval(diffForNow)
 
                             timer.setDuration(duration)
 
@@ -192,7 +192,7 @@ class PausableTimerSpec: QuickSpec {
                     it("will return set duration value", closure: {
                         let timer: PausableTimer = PausableTimer()
 
-                        let duration: NSTimeInterval = 900
+                        let duration: TimeInterval = 900
 
                         timer.setDuration(duration)
 
@@ -220,9 +220,9 @@ class PausableTimerSpec: QuickSpec {
                 context("after start action calling", {
                     it("will be invoked when pause() is called", closure: {
                         let timer: PausableTimer = PausableTimer()
-                        let duration: NSTimeInterval = 20
-                        let startDate: NSDate        = NSDate()
-                        let pauseDate: NSDate        = startDate.dateByAddingTimeInterval(10)
+                        let duration: TimeInterval = 20
+                        let startDate: Date        = Date()
+                        let pauseDate: Date        = startDate.addingTimeInterval(10)
                         var didInvoked: Bool = false
 
                         timer.setDuration(duration)
@@ -240,8 +240,8 @@ class PausableTimerSpec: QuickSpec {
                 context("under status not calling start action ", {
                     it("will not be invoked when pause() is called", closure: {
                         let timer: PausableTimer = PausableTimer()
-                        let duration: NSTimeInterval = 20
-                        let pauseDate: NSDate        = NSDate()
+                        let duration: TimeInterval = 20
+                        let pauseDate: Date        = Date()
                         var didInvoked: Bool = false
 
                         timer.setDuration(duration)
@@ -261,10 +261,10 @@ class PausableTimerSpec: QuickSpec {
                     let timer: PausableTimer = PausableTimer()
 
 
-                    let duration: NSTimeInterval = 20
-                    let startDate: NSDate  = NSDate()
-                    let pauseDate: NSDate  = startDate.dateByAddingTimeInterval(5)
-                    let resumeDate: NSDate = startDate.dateByAddingTimeInterval(10)
+                    let duration: TimeInterval = 20
+                    let startDate: Date  = Date()
+                    let pauseDate: Date  = startDate.addingTimeInterval(5)
+                    let resumeDate: Date = startDate.addingTimeInterval(10)
                     var didInvoked: Bool = false
 
                     timer.setDuration(duration)
@@ -284,8 +284,8 @@ class PausableTimerSpec: QuickSpec {
                 context("with stop action", {
                     it("will be invoked with false argument", closure: {
                         let timer: PausableTimer = PausableTimer()
-                        let duration: NSTimeInterval = 20
-                        let startDate: NSDate = NSDate()
+                        let duration: TimeInterval = 20
+                        let startDate: Date = Date()
                         var didInvoked: Bool = false
                         var isFinished: Bool = false
 
@@ -306,9 +306,9 @@ class PausableTimerSpec: QuickSpec {
                 context("with the passage of duration", {
                     it("will be invoked with true argument", closure: {
                         let timer: PausableTimer = PausableTimer()
-                        let duration: NSTimeInterval = 1
-                        let startDate: NSDate = NSDate()
-                        let stopDate: NSDate  = startDate.dateByAddingTimeInterval(1.5)
+                        let duration: TimeInterval = 1
+                        let startDate: Date = Date()
+                        let stopDate: Date  = startDate.addingTimeInterval(1.5)
                         var didInvoked: Bool = false
                         var isFinished: Bool = false
 
@@ -321,7 +321,7 @@ class PausableTimerSpec: QuickSpec {
 
                         timer.start(startDate)
 
-                        NSRunLoop.currentRunLoop().runUntilDate(stopDate)
+                        RunLoop.current.run(until: stopDate as Date)
 
                         expect(didInvoked).toEventually(beTrue())
                         expect(isFinished).toEventually(beTrue())
