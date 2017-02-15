@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		73F0076E1E53DEE4000094AE /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 73F0076F1E53DEE4000094AE /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+				73F007721E53DEE8000094AE /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+			productName = SwiftLint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		270023271D1D3CAC0001D59D /* PausableTimerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270023261D1D3CAC0001D59D /* PausableTimerSpec.swift */; };
 		2700232C1D1D3CEA0001D59D /* PausableTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2700232A1D1D3CEA0001D59D /* PausableTimer.swift */; };
@@ -164,7 +178,6 @@
 				73AE804F1D0C5828005F1269 /* Frameworks */,
 				73AE80501D0C5828005F1269 /* Headers */,
 				73AE80511D0C5828005F1269 /* Resources */,
-				733BD0071D0C5D6700535D16 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -212,6 +225,10 @@
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
 					};
+					73F0076E1E53DEE4000094AE = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 73AE804D1D0C5828005F1269 /* Build configuration list for PBXProject "PausableTimer" */;
@@ -228,6 +245,7 @@
 			targets = (
 				73AE80521D0C5828005F1269 /* PausableTimer */,
 				73AE805C1D0C5828005F1269 /* PausableTimerTests */,
+				73F0076E1E53DEE4000094AE /* SwiftLint */,
 			);
 		};
 /* End PBXProject section */
@@ -250,14 +268,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		733BD0071D0C5D6700535D16 /* SwiftLint */ = {
+		73F007721E53DEE8000094AE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +482,20 @@
 			};
 			name = Release;
 		};
+		73F007701E53DEE4000094AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		73F007711E53DEE4000094AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -494,6 +525,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		73F0076F1E53DEE4000094AE /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73F007701E53DEE4000094AE /* Debug */,
+				73F007711E53DEE4000094AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
