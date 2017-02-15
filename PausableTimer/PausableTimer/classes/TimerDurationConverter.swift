@@ -9,7 +9,7 @@
 import Foundation
 
 final public class TimerDurationConverter {
-    public class func durationString(_ duration: TimeInterval) -> String {
+    public class func durationString(from duration: TimeInterval) -> String {
         let durationInt: Int      = Int(duration)
         let secondsPerHour: Int   = 3600
         let secondsPerMinute: Int = 60

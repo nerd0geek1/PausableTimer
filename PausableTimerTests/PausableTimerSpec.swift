@@ -14,21 +14,21 @@ import Nimble
 class PausableTimerSpec: QuickSpec {
     override func spec() {
         describe("PausableTimer") {
-            describe("setDuration(duration: TimeInterval)", {
+            describe("set(duration: TimeInterval)", {
                 it("will update duration with passed value", closure: {
                     let timer: PausableTimer = PausableTimer()
 
                     expect(timer.remainingDuration()).to(equal(0))
 
                     let duration: TimeInterval = 300
-                    timer.setDuration(duration)
+                    timer.set(duration: duration)
 
                     expect(timer.remainingDuration()).to(equal(duration))
                 })
             })
 
 
-            describe("isRunning()", {
+            describe("isRunning(at now: Date)", {
                 context("with start action", {
                     context("and called within duration", {
                         it("will return true", closure: {
@@ -39,10 +39,10 @@ class PausableTimerSpec: QuickSpec {
                             let startDate: Date        = Date()
                             let now: Date              = startDate.addingTimeInterval(diff)
 
-                            timer.setDuration(duration)
-                            timer.start(startDate)
+                            timer.set(duration: duration)
+                            timer.start(at: startDate)
 
-                            expect(timer.isRunning(now)).to(beTrue())
+                            expect(timer.isRunning(at: now)).to(beTrue())
                         })
                     })
                     context("and called after duration", {
@@ -54,10 +54,10 @@ class PausableTimerSpec: QuickSpec {
                             let startDate: Date        = Date()
                             let now: Date              = startDate.addingTimeInterval(diff)
 
-                            timer.setDuration(duration)
-                            timer.start(startDate)
+                            timer.set(duration: duration)
+                            timer.start(at: startDate)
 
-                            expect(timer.isRunning(now)).to(beFalse())
+                            expect(timer.isRunning(at: now)).to(beFalse())
                         })
                     })
                     context("and pause action", {
@@ -70,12 +70,12 @@ class PausableTimerSpec: QuickSpec {
                             let pauseDate: Date = startDate.addingTimeInterval(5)
                             let now: Date       = startDate.addingTimeInterval(6)
 
-                            timer.setDuration(duration)
-                            timer.start(startDate)
+                            timer.set(duration: duration)
+                            timer.start(at: startDate)
 
-                            timer.pause(pauseDate)
+                            timer.pause(at: pauseDate)
 
-                            expect(timer.isRunning(now)).to(beFalse())
+                            expect(timer.isRunning(at: now)).to(beFalse())
                         })
                     })
                     context(", pause action and resume action", {
@@ -91,14 +91,14 @@ class PausableTimerSpec: QuickSpec {
                             let now: Date        = resumeDate.addingTimeInterval(2)
 
 
-                            timer.setDuration(duration)
-                            timer.start(startDate)
+                            timer.set(duration: duration)
+                            timer.start(at: startDate)
 
-                            timer.pause(pauseDate)
+                            timer.pause(at: pauseDate)
 
-                            timer.resume(resumeDate)
+                            timer.resume(at: resumeDate)
                             
-                            expect(timer.isRunning(now)).to(beTrue())
+                            expect(timer.isRunning(at: now)).to(beTrue())
                         })
                     })
                 })
@@ -106,7 +106,7 @@ class PausableTimerSpec: QuickSpec {
                     it("will return false", closure: {
                         let timer: PausableTimer = PausableTimer()
 
-                        timer.setDuration(200)
+                        timer.set(duration: 200)
 
                         expect(timer.isRunning()).to(beFalse())
                     })
@@ -114,7 +114,7 @@ class PausableTimerSpec: QuickSpec {
             })
 
 
-            describe("remainingDuration(now: Date)", {
+            describe("remainingDuration(at now: Date)", {
                 context("with startDate", {
                     context("and now argument which diff between startDate exceeds duration", {
                         it("will return 0", closure: {
@@ -124,11 +124,11 @@ class PausableTimerSpec: QuickSpec {
                             let startDate: Date        = Date()
                             let now: Date              = startDate.addingTimeInterval(15)
 
-                            timer.setDuration(duration)
+                            timer.set(duration: duration)
 
-                            timer.start(startDate)
+                            timer.start(at: startDate)
 
-                            expect(timer.remainingDuration(now)).to(equal(0))
+                            expect(timer.remainingDuration(at: now)).to(equal(0))
                         })
                     })
                     context("and now argument which diff between startDate does not exceeds duration", {
@@ -140,11 +140,11 @@ class PausableTimerSpec: QuickSpec {
                             let startDate: Date        = Date()
                             let now: Date              = startDate.addingTimeInterval(diff)
 
-                            timer.setDuration(duration)
+                            timer.set(duration: duration)
 
-                            timer.start(startDate)
+                            timer.start(at: startDate)
                             
-                            expect(timer.remainingDuration(now)).to(equal(duration - diff))
+                            expect(timer.remainingDuration(at: now)).to(equal(duration - diff))
                         })
                     })
                     context("and pauseDate", {
@@ -157,12 +157,12 @@ class PausableTimerSpec: QuickSpec {
                             let pauseDate: Date = startDate.addingTimeInterval(diff)
                             let now: Date       = startDate.addingTimeInterval(9)
 
-                            timer.setDuration(duration)
+                            timer.set(duration: duration)
 
-                            timer.start(startDate)
-                            timer.pause(pauseDate)
+                            timer.start(at: startDate)
+                            timer.pause(at: pauseDate)
 
-                            expect(timer.remainingDuration(now)).to(equal(duration - diff))
+                            expect(timer.remainingDuration(at: now)).to(equal(duration - diff))
                         })
                     })
                     context(", pauseDate and resumeDate", {
@@ -178,13 +178,13 @@ class PausableTimerSpec: QuickSpec {
                             let resumeDate: Date = startDate.addingTimeInterval(diffForResumeDate)
                             let now: Date        = resumeDate.addingTimeInterval(diffForNow)
 
-                            timer.setDuration(duration)
+                            timer.set(duration: duration)
 
-                            timer.start(startDate)
-                            timer.pause(pauseDate)
-                            timer.resume(resumeDate)
+                            timer.start(at: startDate)
+                            timer.pause(at: pauseDate)
+                            timer.resume(at: resumeDate)
 
-                            expect(timer.remainingDuration(now)).to(equal(duration - diffForPauseDate - diffForNow))
+                            expect(timer.remainingDuration(at: now)).to(equal(duration - diffForPauseDate - diffForNow))
                         })
                     })
                 })
@@ -194,7 +194,7 @@ class PausableTimerSpec: QuickSpec {
 
                         let duration: TimeInterval = 900
 
-                        timer.setDuration(duration)
+                        timer.set(duration: duration)
 
                         expect(duration).to(equal(duration))
                     })
@@ -225,14 +225,14 @@ class PausableTimerSpec: QuickSpec {
                         let pauseDate: Date        = startDate.addingTimeInterval(10)
                         var didInvoked: Bool = false
 
-                        timer.setDuration(duration)
+                        timer.set(duration: duration)
 
                         timer.didPause = {
                             didInvoked = true
                         }
 
-                        timer.start(startDate)
-                        timer.pause(pauseDate)
+                        timer.start(at: startDate)
+                        timer.pause(at: pauseDate)
 
                         expect(didInvoked).toEventually(beTrue())
                     })
@@ -244,13 +244,13 @@ class PausableTimerSpec: QuickSpec {
                         let pauseDate: Date        = Date()
                         var didInvoked: Bool = false
 
-                        timer.setDuration(duration)
+                        timer.set(duration: duration)
 
                         timer.didPause = {
                             didInvoked = true
                         }
 
-                        timer.pause(pauseDate)
+                        timer.pause(at: pauseDate)
                         
                         expect(didInvoked).toEventually(beFalse())
                     })
@@ -267,15 +267,15 @@ class PausableTimerSpec: QuickSpec {
                     let resumeDate: Date = startDate.addingTimeInterval(10)
                     var didInvoked: Bool = false
 
-                    timer.setDuration(duration)
+                    timer.set(duration: duration)
 
                     timer.didResume = {
                         didInvoked = true
                     }
 
-                    timer.start(startDate)
-                    timer.pause(pauseDate)
-                    timer.resume(resumeDate)
+                    timer.start(at: startDate)
+                    timer.pause(at: pauseDate)
+                    timer.resume(at: resumeDate)
 
                     expect(didInvoked).toEventually(beTrue())
                 })
@@ -289,14 +289,14 @@ class PausableTimerSpec: QuickSpec {
                         var didInvoked: Bool = false
                         var isFinished: Bool = false
 
-                        timer.setDuration(duration)
+                        timer.set(duration: duration)
 
                         timer.didStop = { finished in
                             didInvoked = true
                             isFinished = finished
                         }
 
-                        timer.start(startDate)
+                        timer.start(at: startDate)
                         timer.stop()
 
                         expect(didInvoked).toEventually(beTrue())
@@ -312,14 +312,14 @@ class PausableTimerSpec: QuickSpec {
                         var didInvoked: Bool = false
                         var isFinished: Bool = false
 
-                        timer.setDuration(duration)
+                        timer.set(duration: duration)
 
                         timer.didStop = { finished in
                             didInvoked = true
                             isFinished = finished
                         }
 
-                        timer.start(startDate)
+                        timer.start(at: startDate)
 
                         RunLoop.current.run(until: stopDate as Date)
 

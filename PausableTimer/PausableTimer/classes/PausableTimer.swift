@@ -12,14 +12,14 @@ open class PausableTimer: PausableTimerType {
 
     open static let sharedInstance: PausableTimer = PausableTimer()
 
-    //MARK: - callback closures
+    // MARK: - callback closures
 
     open var didStart: (() -> Void)?
     open var didPause: (() -> Void)?
     open var didResume: (() -> Void)?
     open var didStop: ((_ isFinished: Bool) -> Void)?
 
-    //MARK: - duration, and related variables
+    // MARK: - duration, and related variables
 
     private var timer: Timer?
 
@@ -28,39 +28,39 @@ open class PausableTimer: PausableTimerType {
     private var duration: TimeInterval        = 0
     private var currentDuration: TimeInterval = 0
 
-    //MARK: - setup
+    // MARK: - setup
 
-    open func setDuration(_ duration: TimeInterval) {
+    open func set(duration: TimeInterval) {
         self.duration        = duration
         self.currentDuration = duration
     }
 
-    //MARK: - operate
+    // MARK: - operate
 
-    open func start(_ startDate: Date = Date()) {
+    open func start(at startDate: Date = Date()) {
         registerTimer()
 
         self.startDate = startDate
         didStart?()
     }
 
-    open func pause(_ pauseDate: Date = Date()) {
-        if !isRunning(pauseDate) {
+    open func pause(at pauseDate: Date = Date()) {
+        if !isRunning(at: pauseDate) {
             return
         }
 
-        self.currentDuration = remainingDuration(pauseDate)
+        self.currentDuration = remainingDuration(at: pauseDate)
         self.startDate       = nil
         self.timer?.invalidate()
 
         didPause?()
     }
 
-    open func resume(_ resumeDate: Date = Date()) {
-        if isRunning(resumeDate) {
+    open func resume(at resumeDate: Date = Date()) {
+        if isRunning(at: resumeDate) {
             return
         }
-        if remainingDuration(resumeDate) == 0 {
+        if remainingDuration(at: resumeDate) == 0 {
             return
         }
 
@@ -76,7 +76,7 @@ open class PausableTimer: PausableTimerType {
         didStop?(false)
     }
 
-    //MARK: - NSTimer
+    // MARK: - Timer
 
     @objc
     private func didFinishTimerDuration() {
@@ -85,17 +85,17 @@ open class PausableTimer: PausableTimerType {
         didStop?(true)
     }
 
-    //MARK: -
+    // MARK: -
 
-    open func isRunning(_ now: Date = Date()) -> Bool {
+    open func isRunning(at now: Date = Date()) -> Bool {
         if startDate == nil {
             return false
         }
 
-        return remainingDuration(now) > 0
+        return remainingDuration(at: now) > 0
     }
 
-    open func remainingDuration(_ now: Date = Date()) -> TimeInterval {
+    open func remainingDuration(at now: Date = Date()) -> TimeInterval {
         guard let startDate: Date = startDate else {
             return currentDuration
         }
@@ -106,14 +106,14 @@ open class PausableTimer: PausableTimerType {
         return remainingDuration < 0 ? 0 : remainingDuration
     }
 
-    //MARK: - private
+    // MARK: - private
 
     private func registerTimer() {
         timer = Timer.scheduledTimer(timeInterval: currentDuration,
-                                                       target: self,
-                                                       selector: #selector(didFinishTimerDuration),
-                                                       userInfo: nil,
-                                                       repeats: false)
+                                     target: self,
+                                     selector: #selector(didFinishTimerDuration),
+                                     userInfo: nil,
+                                     repeats: false)
     }
 
     private func reset() {
