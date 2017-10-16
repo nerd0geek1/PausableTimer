@@ -1,15 +1,15 @@
 import Foundation
 
-open class PausableTimer: PausableTimerType {
+public class PausableTimer: PausableTimerType {
 
-    open static let sharedInstance: PausableTimer = PausableTimer()
+    public static let sharedInstance: PausableTimer = PausableTimer()
 
     // MARK: - callback closures
 
-    open var didStart: (() -> Void)?
-    open var didPause: (() -> Void)?
-    open var didResume: (() -> Void)?
-    open var didStop: ((_ isFinished: Bool) -> Void)?
+    public var didStart: (() -> Void)?
+    public var didPause: (() -> Void)?
+    public var didResume: (() -> Void)?
+    public var didStop: ((_ isFinished: Bool) -> Void)?
 
     // MARK: - duration, and related variables
 
@@ -22,21 +22,21 @@ open class PausableTimer: PausableTimerType {
 
     // MARK: - setup
 
-    open func set(duration: TimeInterval) {
+    public func set(duration: TimeInterval) {
         self.duration        = duration
         self.currentDuration = duration
     }
 
     // MARK: - operate
 
-    open func start(at startDate: Date = Date()) {
+    public func start(at startDate: Date = Date()) {
         registerTimer()
 
         self.startDate = startDate
         didStart?()
     }
 
-    open func pause(at pauseDate: Date = Date()) {
+    public func pause(at pauseDate: Date = Date()) {
         if !isRunning(at: pauseDate) {
             return
         }
@@ -48,7 +48,7 @@ open class PausableTimer: PausableTimerType {
         didPause?()
     }
 
-    open func resume(at resumeDate: Date = Date()) {
+    public func resume(at resumeDate: Date = Date()) {
         if isRunning(at: resumeDate) {
             return
         }
@@ -62,7 +62,7 @@ open class PausableTimer: PausableTimerType {
         didResume?()
     }
 
-    open func stop() {
+    public func stop() {
         reset()
 
         didStop?(false)
@@ -79,7 +79,7 @@ open class PausableTimer: PausableTimerType {
 
     // MARK: -
 
-    open func isRunning(at now: Date = Date()) -> Bool {
+    public func isRunning(at now: Date = Date()) -> Bool {
         if startDate == nil {
             return false
         }
@@ -87,7 +87,7 @@ open class PausableTimer: PausableTimerType {
         return remainingDuration(at: now) > 0
     }
 
-    open func remainingDuration(at now: Date = Date()) -> TimeInterval {
+    public func remainingDuration(at now: Date = Date()) -> TimeInterval {
         guard let startDate: Date = startDate else {
             return currentDuration
         }
