@@ -1,11 +1,3 @@
-//
-//  PausableTimerSpec.swift
-//  PausableTimer
-//
-//  Created by Kohei Tabata on 6/12/16.
-//  Copyright © 2016 Kohei Tabata. All rights reserved.
-//
-
 import Quick
 import Nimble
 
