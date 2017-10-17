@@ -8,40 +8,40 @@ This is Timer module written in Swift
 PausableTimer provides two classes.
 
 ### PausableTimer
-PausableTimer provide stopwatch function.
+PausableTimer provide Timer function.
 ```Swift
-PausableTimer.sharedInstance.setDuration(200)
+PausableTimer.shared.setDuration(200)
 
-PausableTimer.sharedInstance.didStart = {
+PausableTimer.shared.didStart = {
     print("This text will be printed when timer was started.")
 }
-PausableTimer.sharedInstance.didPause = {
+PausableTimer.shared.didPause = {
     print("This text will be printed when timer was paused.")
 }
-PausableTimer.sharedInstance.didResume = {
+PausableTimer.shared.didResume = {
   print("This text will be printed when timer was resumed.")
 }
-PausableTimer.sharedInstance.didStop = {isFinished in
+PausableTimer.shared.didStop = { isFinished in
   print("This text will be printed when stop() method was called or elapsed duration.")
 }
 
-print(PausableTimer.sharedInstance.isRunning())         //false
-print(PausableTimer.sharedInstance.remainingDuration()) //200
+print(PausableTimer.shared.isRunning())         //false
+print(PausableTimer.shared.remainingDuration()) //200
 
-PausableTimer.sharedInstance.start() //This will invoke didStart closure
+PausableTimer.shared.start() //This will invoke didStart closure
 
-print(PausableTimer.sharedInstance.isRunning())         //true
+print(PausableTimer.shared.isRunning())         //true
 
 //10sec later...
-print(PausableTimer.sharedInstance.remainingDuration()) //190
+print(PausableTimer.shared.remainingDuration()) //190
 
-PausableTimer.sharedInstance.pause() //This will invoke didPause closure
+PausableTimer.shared.pause() //This will invoke didPause closure
 
-print(PausableTimer.sharedInstance.isRunning())         //false
+print(PausableTimer.shared.isRunning())         //false
 
-PausableTimer.sharedInstance.resume() //This will invoke didResume closure
+PausableTimer.shared.resume() //This will invoke didResume closure
 
-print(PausableTimer.sharedInstance.isRunning())         //true
+print(PausableTimer.shared.isRunning())         //true
 ```
 
 ### TimerDurationConverter
@@ -53,11 +53,10 @@ print(TimerDurationConverter.durationString(1800)) //30:00
 print(TimerDurationConverter.durationString(3690)) //01:01:30
 ```
 ## Requirements
-- iOS 9.0+
-- Xcode 8.0 or above
+- iOS 10.0+
+- Xcode 9.0 or above
 
-PausableTimer is now supporting Swift3.
-If you want to use with Swift2.2, use Swift2.2 branch.
+PausableTimer is now supporting Swift4.
 
 ## Installation
 PausableTimer supports only iOS and Carthage.

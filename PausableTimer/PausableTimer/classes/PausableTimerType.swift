@@ -1,11 +1,3 @@
-//
-//  PausableTimerType.swift
-//  PausableTimer
-//
-//  Created by Kohei Tabata on 6/11/16.
-//  Copyright © 2016 Kohei Tabata. All rights reserved.
-//
-
 import Foundation
 
 public protocol PausableTimerType {

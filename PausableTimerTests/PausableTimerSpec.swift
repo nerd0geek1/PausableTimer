@@ -1,11 +1,3 @@
-//
-//  PausableTimerSpec.swift
-//  PausableTimer
-//
-//  Created by Kohei Tabata on 6/12/16.
-//  Copyright © 2016 Kohei Tabata. All rights reserved.
-//
-
 import Quick
 import Nimble
 
@@ -15,7 +7,7 @@ class PausableTimerSpec: QuickSpec {
     override func spec() {
         describe("PausableTimer") {
             describe("set(duration: TimeInterval)", {
-                it("will update duration with passed value", closure: {
+                it("will update remaining duration with passed value", closure: {
                     let timer: PausableTimer = PausableTimer()
 
                     expect(timer.remainingDuration()).to(equal(0))
@@ -29,8 +21,8 @@ class PausableTimerSpec: QuickSpec {
 
 
             describe("isRunning(at now: Date)", {
-                context("with start action", {
-                    context("and called within duration", {
+                context("called after start()", {
+                    context("and within set duration", {
                         it("will return true", closure: {
                             let timer: PausableTimer = PausableTimer()
 
@@ -45,7 +37,7 @@ class PausableTimerSpec: QuickSpec {
                             expect(timer.isRunning(at: now)).to(beTrue())
                         })
                     })
-                    context("and called after duration", {
+                    context("and beyond set duration", {
                         it("will return false", closure: {
                             let timer: PausableTimer = PausableTimer()
 
@@ -60,15 +52,14 @@ class PausableTimerSpec: QuickSpec {
                             expect(timer.isRunning(at: now)).to(beFalse())
                         })
                     })
-                    context("and pause action", {
+                    context("and pause()", {
                         it("will return false", closure: {
                             let timer: PausableTimer = PausableTimer()
 
                             let duration: TimeInterval = 10
-
-                            let startDate: Date = Date()
-                            let pauseDate: Date = startDate.addingTimeInterval(5)
-                            let now: Date       = startDate.addingTimeInterval(6)
+                            let startDate: Date        = Date()
+                            let pauseDate: Date        = startDate.addingTimeInterval(5)
+                            let now: Date              = startDate.addingTimeInterval(6)
 
                             timer.set(duration: duration)
                             timer.start(at: startDate)
@@ -78,7 +69,7 @@ class PausableTimerSpec: QuickSpec {
                             expect(timer.isRunning(at: now)).to(beFalse())
                         })
                     })
-                    context(", pause action and resume action", {
+                    context(", pause() and resume()", {
                         it("will return true", closure: {
                             let timer: PausableTimer = PausableTimer()
 
@@ -102,7 +93,7 @@ class PausableTimerSpec: QuickSpec {
                         })
                     })
                 })
-                context("without start action", {
+                context("called without start()", {
                     it("will return false", closure: {
                         let timer: PausableTimer = PausableTimer()
 
@@ -180,9 +171,13 @@ class PausableTimerSpec: QuickSpec {
 
                             timer.set(duration: duration)
 
+                            print("1-1:\(timer.remainingDuration())")
                             timer.start(at: startDate)
+                            print("2-1:\(timer.remainingDuration(at: startDate))")
                             timer.pause(at: pauseDate)
+                            print("3-1:\(timer.remainingDuration(at: pauseDate))")
                             timer.resume(at: resumeDate)
+                            print("4-1:\(timer.remainingDuration(at: resumeDate))")
 
                             expect(timer.remainingDuration(at: now)).to(equal(duration - diffForPauseDate - diffForNow))
                         })
@@ -217,7 +212,7 @@ class PausableTimerSpec: QuickSpec {
                 })
             })
             describe("didPause", {
-                context("after start action calling", {
+                context("after calling start()", {
                     it("will be invoked when pause() is called", closure: {
                         let timer: PausableTimer = PausableTimer()
                         let duration: TimeInterval = 20
@@ -226,18 +221,18 @@ class PausableTimerSpec: QuickSpec {
                         var didInvoked: Bool = false
 
                         timer.set(duration: duration)
+                        timer.start(at: startDate)
 
                         timer.didPause = {
                             didInvoked = true
                         }
 
-                        timer.start(at: startDate)
                         timer.pause(at: pauseDate)
 
                         expect(didInvoked).toEventually(beTrue())
                     })
                 })
-                context("under status not calling start action ", {
+                context("in not calling start()", {
                     it("will not be invoked when pause() is called", closure: {
                         let timer: PausableTimer = PausableTimer()
                         let duration: TimeInterval = 20
@@ -260,7 +255,6 @@ class PausableTimerSpec: QuickSpec {
                 it("will be invoked when resume() is called", closure: {
                     let timer: PausableTimer = PausableTimer()
 
-
                     let duration: TimeInterval = 20
                     let startDate: Date  = Date()
                     let pauseDate: Date  = startDate.addingTimeInterval(5)
@@ -268,35 +262,36 @@ class PausableTimerSpec: QuickSpec {
                     var didInvoked: Bool = false
 
                     timer.set(duration: duration)
+                    timer.start(at: startDate)
+                    timer.pause(at: pauseDate)
 
                     timer.didResume = {
                         didInvoked = true
                     }
 
-                    timer.start(at: startDate)
-                    timer.pause(at: pauseDate)
                     timer.resume(at: resumeDate)
 
                     expect(didInvoked).toEventually(beTrue())
                 })
             })
             describe("didStop", {
-                context("with stop action", {
+                context("with stop()", {
                     it("will be invoked with false argument", closure: {
                         let timer: PausableTimer = PausableTimer()
+
                         let duration: TimeInterval = 20
-                        let startDate: Date = Date()
+                        let startDate: Date        = Date()
                         var didInvoked: Bool = false
                         var isFinished: Bool = false
 
                         timer.set(duration: duration)
+                        timer.start(at: startDate)
 
                         timer.didStop = { finished in
                             didInvoked = true
                             isFinished = finished
                         }
 
-                        timer.start(at: startDate)
                         timer.stop()
 
                         expect(didInvoked).toEventually(beTrue())
@@ -306,9 +301,10 @@ class PausableTimerSpec: QuickSpec {
                 context("with the passage of duration", {
                     it("will be invoked with true argument", closure: {
                         let timer: PausableTimer = PausableTimer()
+
                         let duration: TimeInterval = 1
-                        let startDate: Date = Date()
-                        let stopDate: Date  = startDate.addingTimeInterval(1.5)
+                        let startDate: Date        = Date()
+                        let stopDate: Date         = startDate.addingTimeInterval(1.5)
                         var didInvoked: Bool = false
                         var isFinished: Bool = false
 
